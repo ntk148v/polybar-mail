@@ -1,15 +1,16 @@
 <div align="center">
 	<h1>Polybar Mail</h1>
-	<blockquote align="center">A [Polybar](https://github.com/jaagr/polybar) module to show unread messages from mail inspired by [polybar-gmail](https://github.com/crabvk/polybar-gmail)</blockquote>
+	<blockquote align="center">A <a href="https://github.com/jaagr/polybar">Polybar</a> module to show unread messages from mail inspired by <a href="https://github.com/crabvk/polybar-gmail">polybar-gmail</a></blockquote>
 
-	<p>
-		<a href="https://github.com/ntk148v/polybar-mail/blob/master/LICENSE">
-			<img alt="GitHub license" src="https://img.shields.io/github/license/ntk148v/polybar-mail?style=for-the-badge">
-		</a>
-		<a href="https://github.com/ntk148v/polybar-mail/stargazers">
-			<img alt="GitHub stars" src="https://img.shields.io/github/stars/ntk148v/polybar-mail?style=for-the-badge">
-		</a>
-		<br>
+    <p>
+    	<a href="https://github.com/ntk148v/polybar-mail/blob/master/LICENSE">
+    		<img alt="GitHub license" src="https://img.shields.io/github/license/ntk148v/polybar-mail?style=for-the-badge">
+    	</a>
+    	<a href="https://github.com/ntk148v/polybar-mail/stargazers">
+    		<img alt="GitHub stars" src="https://img.shields.io/github/stars/ntk148v/polybar-mail?style=for-the-badge">
+    	</a>
+    	<br>
+
 <!--		<a href="https://github.com/ntk148v/polybar-mail/actions">
 			<img alt="Windows Build Status" src="https://img.shields.io/github/workflow/status/ntk148v/polybar-mail/Windows%20Build?style=flat-square&logo=github&label=Windows">
 		</a>
@@ -20,12 +21,14 @@
 			<img alt="MacOS Build Status" src="https://img.shields.io/github/workflow/status/ntk148v/polybar-mail/MacOS%20Build?style=flat-square&logo=github&label=MacOS">
 		</a>
 		<br>-->
-	</p><br>
+
+    </p><br>
+
 </div>
 
 ## Dependencies
 
- - **Font Awesome** - default email icon.
+- **Font Awesome** - default email icon.
 - **canberra-gtk-play** - new email sound notification (optional).
 
 ## Installation
