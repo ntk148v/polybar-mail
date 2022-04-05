@@ -22,6 +22,12 @@
     </p><br>
 </div>
 
+## Preview
+
+
+![](./screenshots/nounread.png)
+![](./screenshots/unread.png)
+
 
 ## Dependencies
 
