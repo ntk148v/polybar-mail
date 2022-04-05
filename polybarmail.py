@@ -7,7 +7,8 @@ import sys
 import time
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--config', default='$HOME/.config/polybar/mail.ini')
+parser.add_argument(
+    '--config', default=f'{Path.home()}/.config/polybar/mail.ini')
 parser.add_argument('-p', '--prefix', default='\uf0e0')
 parser.add_argument('-c', '--color', default='#e06c75')
 parser.add_argument('-ns', '--nosound', action='store_true')
@@ -17,7 +18,12 @@ unread_prefix = '%{F' + args.color + '}' + args.prefix + ' %{F-}'
 error_prefix = '%{F' + args.color + '}\uf06a %{F-}'
 count_was = 0
 
+print(args.config)
+
 # Parse config file
+if not Path(args.config).is_file():
+    print(error_prefix + f'config file {args.config} not found', flush=True)
+    sys.exit(1)
 config = configparser.ConfigParser()
 config.read(args.config)
 
@@ -50,7 +56,7 @@ def update_count(count_was):
         imap = imaplib.IMAP4_SSL(mail_server, mail_port)
         imap.login(mail_username, mail_password)
         imap.select(mailbox=mail_box)
-        typ, data = imap.search(None, '(UNSEEN)')
+        typ, data = imap.search(None, '(Unseen)')
     else:
         raise Exception(f'Unsupported mail protocol: {mail_protocol}')
     if typ != 'OK':
@@ -66,13 +72,8 @@ print_count(0, True)
 
 while True:
     try:
-        if Path(args.config).is_file():
-            count_was = update_count(count_was)
-            time.sleep(10)
-        else:
-            print(error_prefix +
-                  f'config file {args.config} not found', flush=True)
-            time.sleep(2)
+        count_was = update_count(count_was)
+        time.sleep(30)
     except Exception as e:
         print(error_prefix + f'something went wrong: {str(e)}', flush=True)
         sys.exit(1)
