@@ -42,7 +42,7 @@ cp mail.ini ~/.config/polybar/mail.ini
 - Scripts arguments
 
 ```bash
-usage: polybarmail.py [-h] [--config CONFIG] [-p PREFIX] [-c COLOR] [-ns]
+usage: polybarmail.py [-h] [--config CONFIG] [-p PREFIX] [-c COLOR] [-ns] [-dr DURATION]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -50,6 +50,7 @@ optional arguments:
   -p PREFIX, --prefix PREFIX
   -c COLOR, --color COLOR
   -ns, --nosound
+  -dr DURATION, --duration DURATION
 ```
 
 - Update polybar config

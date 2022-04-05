@@ -12,6 +12,7 @@ parser.add_argument(
 parser.add_argument('-p', '--prefix', default='\uf0e0')
 parser.add_argument('-c', '--color', default='#e06c75')
 parser.add_argument('-ns', '--nosound', action='store_true')
+parser.add_argument('-dr', '--duration', default=120)
 args = parser.parse_args()
 
 unread_prefix = '%{F' + args.color + '}' + args.prefix + ' %{F-}'
@@ -68,7 +69,7 @@ print_count(0, True)
 while True:
     try:
         count_was = update_count(count_was)
-        time.sleep(30)
+        time.sleep(args.duration)
     except Exception as e:
         print(error_prefix + f'something went wrong: {str(e)}', flush=True)
         sys.exit(1)
