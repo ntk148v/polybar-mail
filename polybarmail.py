@@ -28,7 +28,6 @@ config = configparser.ConfigParser()
 config.read(args.config)
 
 try:
-    mail_protocol = config['default']['mail_protocol']
     mail_server = config['default']['mail_server']
     mail_port = config['default']['mail_port']
     mail_username = config['default']['mail_username']
@@ -51,14 +50,10 @@ def print_count(count, is_odd=False):
 
 def update_count(count_was):
     # Connect to mail server
-    typ = data = None
-    if mail_protocol.upper() == 'IMAP':
-        imap = imaplib.IMAP4_SSL(mail_server, mail_port)
-        imap.login(mail_username, mail_password)
-        imap.select(mailbox=mail_box)
-        typ, data = imap.search(None, '(Unseen)')
-    else:
-        raise Exception(f'Unsupported mail protocol: {mail_protocol}')
+    imap = imaplib.IMAP4_SSL(mail_server, mail_port)
+    imap.login(mail_username, mail_password)
+    imap.select(mailbox=mail_box)
+    typ, data = imap.search(None, '(Unseen)')
     if typ != 'OK':
         raise Exception(f'Search command return {typ}')
     count = len(data[0].split())
