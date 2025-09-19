@@ -40,6 +40,7 @@
 
 ```bash
 git clone http://github.com/ntk148v/polybar-mail.git
+cd polybar-mail
 cp polybarmail.py ~/.config/polybar/polybarmail.py
 cp mail.ini ~/.config/polybar/mail.ini
 # Modify mail.ini with your mail configuration
